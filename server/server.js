@@ -305,19 +305,13 @@ res.json(result);
 
 );
 
+app.get("/", (req, res) => {
+  res.send("Student Attendance Backend is Running ✅");
+});
+/* */
+const PORT = process.env.PORT || 5000;
 
-app.listen(
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
-5000,
-
-()=>{
-
-console.log(
-
-"Server running on port 5000"
-
-);
-
-}
-
-);

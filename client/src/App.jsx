@@ -12,15 +12,16 @@ function App() {
   }, []);
 
   function fetchStudents() {
-    fetch("http://localhost:5000/students")
-      .then((res) => res.json())
+    /*fetch("http://localhost:5000/students")*/
+    fetch("https://student-attendance-system-yldh.onrender.com/students")  
+    .then((res) => res.json())
       .then((data) => setStudents(data));
   }
 
   function addStudent() {
     if (name.trim() === "") return;
 
-    fetch("http://localhost:5000/students", {
+     fetch("https://student-attendance-system-yldh.onrender.com/students"  , {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -136,7 +137,7 @@ function App() {
             <button
               onClick={() =>
                 updateData(
-                  `http://localhost:5000/students/${student.id}/present`
+                  `https://student-attendance-system-yldh.onrender.com/students/${student.id}/present`
                 )
               }
             >
@@ -146,7 +147,7 @@ function App() {
             <button
               onClick={() =>
                 updateData(
-                  `http://localhost:5000/students/${student.id}/absent`
+                  `https://student-attendance-system-yldh.onrender.com/students/${student.id}/absent`
                 )
               }
             >
@@ -156,7 +157,7 @@ function App() {
             <button
               onClick={() =>
                 updateData(
-                  `http://localhost:5000/students/${student.id}/reset`
+                  `https://student-attendance-system-yldh.onrender.com/students/${student.id}/reset`
                 )
               }
             >
@@ -170,7 +171,7 @@ function App() {
 
                 if (newName) {
                   updateData(
-                    `http://localhost:5000/students/${student.id}/edit`,
+                    `https://student-attendance-system-yldh.onrender.com/students/${student.id}/edit`,
                     "PUT",
                     { name: newName }
                   );
@@ -189,7 +190,7 @@ function App() {
 
                 if (confirmDelete) {
                   updateData(
-                    `http://localhost:5000/students/${student.id}`,
+                    `https://student-attendance-system-yldh.onrender.com/students/${student.id}`,
                     "DELETE"
                   );
                 }
